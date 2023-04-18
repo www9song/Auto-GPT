@@ -27,7 +27,7 @@ RUN chown appuser:appuser /home/appuser
 USER appuser
 
 # Copy the requirements.txt file and install the requirements
-COPY --chown=appuser:appuser requirements.txt .
+COPY --chown=appuser:appuser requirements.txt auto-gpt.json .
 RUN sed -i '/Items below this point will not be included in the Docker Image/,$d' requirements.txt && \
 	pip install --no-cache-dir --user -r requirements.txt
 
